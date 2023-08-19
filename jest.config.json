@@ -1,0 +1,23 @@
+{
+  "testEnvironment": "jsdom",
+  "preset": "ts-jest",
+  "testMatch": [
+    "<rootDir>/src/__test__/*.test.ts",
+    "<rootDir>/src/__test__/*.test.tsx"
+  ],
+  "testPathIgnorePatterns": ["/node_modules/"],
+  "coverageDirectory": "./coverage",
+  "coveragePathIgnorePatterns": ["node_modules"],
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
+  "transform": {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        "babel": true,
+        "tsconfig": "tsconfig.json"
+      }
+    ]
+  }
+}
