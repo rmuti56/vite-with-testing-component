@@ -26,8 +26,8 @@ describe("Button Component", () => {
     sizes.forEach((size) => {
       const dataTestId = `button-id-${size}`;
 
-      render(<Button size={size} data-testid={dataTestId} />);
-      const buttonElement = screen.getByTestId(dataTestId);
+      const {getByTestId } = render(<Button size={size} data-testid={dataTestId} />);
+      const buttonElement = getByTestId(dataTestId);
       expect(buttonElement).toHaveClass(`size-${size}`);
     });
   });

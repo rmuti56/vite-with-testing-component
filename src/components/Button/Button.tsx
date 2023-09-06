@@ -21,7 +21,7 @@ const Button = ({
   });
 
   return (
-    <button className={classes} {...restProps}>
+    <button className={classes} data-testid="base-button" {...restProps}>
       {children}
     </button>
   );
