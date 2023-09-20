@@ -47,4 +47,23 @@ describe("Button Component", () => {
       expect(buttonElement).toHaveClass(`color-${color}`);
     });
   });
+
+  it("renders with different variant colors and sizes", () => {
+    const colors: ["default", "primary", "secondary"] = [
+      "default",
+      "primary",
+      "secondary",
+    ];
+    const sizes: ["small", "medium", "large"] = ["small", "medium", "large"];
+
+    colors.forEach((color) => {
+      sizes.forEach(size => {
+        const dataTestId = `button-id-${color}-${size}`;
+        render(<Button color={color} size={size} data-testid={dataTestId} />);
+        const buttonElement = screen.getByTestId(dataTestId);
+        expect(buttonElement).toHaveClass(`color-${color}`);
+        expect(buttonElement).toHaveClass(`size-${size}`);
+      })
+    });
+  });
 });
