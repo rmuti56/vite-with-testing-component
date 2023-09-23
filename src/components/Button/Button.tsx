@@ -2,10 +2,13 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 import "./button.css";
 
-type ButtonProps = {
+export type ButtonSizeOption = "small" | "medium" | "large";
+export type ButtonColorOption = "default" | "primary" | "secondary";
+
+export type ButtonProps = {
   children?: ReactNode;
-  size?: "small" | "medium" | "large";
-  color?: "default" | "primary" | "secondary";
+  size?: ButtonSizeOption;
+  color?: ButtonColorOption;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
