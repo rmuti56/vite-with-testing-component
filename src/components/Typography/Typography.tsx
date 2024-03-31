@@ -38,7 +38,8 @@ const Typography = ({
   ...restProps
 }: TypographyProps) => {
   const classes = classNames("typography", className);
-  const Element = variantToElement[variant];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Element = variantToElement[variant] as any
 
   return (
     <Element className={classes} {...restProps}>
